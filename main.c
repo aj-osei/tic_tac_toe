@@ -29,17 +29,19 @@ int main(){
 
         playerMove();
         winner = checkWinner();
-        if(winner != ' ' || checkFreeSpaces() = 0;){
+        if(winner != ' ' || checkFreeSpaces() == 0){
             break;
         }
 
         computerMove();
         winner = checkWinner();
-        if(winner != ' ' || checkFreeSpaces() = 0;){
+        if(winner != ' ' || checkFreeSpaces() == 0){
             break;
         }
     }
     
+    printBoard();
+    printWinner(winner);
     return 0;
 }
 
@@ -97,7 +99,7 @@ void playerMove(){                                                  // this func
     y--;
 
     if(board[x][y] != ' '){
-        printf("Invalid move!\n")
+        printf("Invalid move!\n");
 
     } else{
         board[x][y] =  PLAYER;
@@ -164,11 +166,11 @@ char checkWinner(){
 // used to print the player who won
 void printWinner(char winner){
     if (winner == PLAYER){
-        printf("YOU HAVE WON!")
+        printf("YOU HAVE WON!");
 
     }else if(winner == COMPUTER){
-        printf("YOU LOST!")
+        printf("YOU LOST!");
     } else{
-        printf("IT IS A DRAW!")
+        printf("IT IS A DRAW!");
     }
 }     

@@ -29,6 +29,15 @@ int main(){
 
         playerMove();
         winner = checkWinner();
+        if(winner != ' ' || checkFreeSpaces() = 0;){
+            break;
+        }
+
+        computerMove();
+        winner = checkWinner();
+        if(winner != ' ' || checkFreeSpaces() = 0;){
+            break;
+        }
     }
     
     return 0;
@@ -102,6 +111,24 @@ void playerMove(){                                                  // this func
 // for when it's the computer turn to move
 void computerMove(){
 
+    // creates a seed based on current time
+
+    srand(time(0));
+    int x;
+    int y;
+
+    if(checkFreeSpaces() > 0){
+        do{
+            x = rand() % 3;
+            y = rand() % 3;
+        }while(board[x][y] != ' ');
+
+        board[x][y] = COMPUTER;
+
+    } else {
+        printWinner(' ');
+    }
+
 }  
 
 // used to check who won
@@ -136,5 +163,12 @@ char checkWinner(){
 
 // used to print the player who won
 void printWinner(char winner){
+    if (winner == PLAYER){
+        printf("YOU HAVE WON!")
 
+    }else if(winner == COMPUTER){
+        printf("YOU LOST!")
+    } else{
+        printf("IT IS A DRAW!")
+    }
 }     

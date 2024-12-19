@@ -5,7 +5,7 @@
 
 char board[3][3];           // 2d array of the game board
 const char PLAYER = 'X';    // PLAYER is set to X
-const char COMPUTER = 'O'       // computer is set to O
+const char COMPUTER = 'O';       // computer is set to O
 
 
 
@@ -23,6 +23,7 @@ int main(){
     char winner = ' ';
 
     resetBoard();
+    printBoard();
     return 0;
 }
 
@@ -30,7 +31,7 @@ int main(){
 void resetBoard(){                              // nested for loops in order to clear the board's row and column
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            board[i][j] = ' ;'
+            board[i][j] = ' ';
         }
 
     }
@@ -38,6 +39,12 @@ void resetBoard(){                              // nested for loops in order to 
 
 //used to print 2d charatcer array
 void printBoard(){
+    printf(" %c | %c | %c ", board[0][0], board[0][1], board[0][2]);
+    printf("\n---|---|---\n");
+    printf(" %c | %c | %c ", board[1][0], board[1][1], board[1][2]);
+    printf("\n---|---|---\n");
+    printf(" %c | %c | %c ", board[2][0], board[2][1], board[2][2]);
+    printf("\n");
 
 }
 
@@ -64,4 +71,4 @@ char checkWinner(){
 // used to print the player who won
 void printWinner(char winner){
 
-}         
+}     

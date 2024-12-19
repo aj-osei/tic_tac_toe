@@ -9,8 +9,8 @@ const char COMPUTER = 'O'       // computer is set to O
 
 
 
-void resetBoard();          //reset the 2d character array
-void printBoard();          //used to print 2d charatcer array
+void resetBoard();          //reset the 2d char array
+void printBoard();          //used to print 2d char array
 int checkFreeSpaces();      // check if there is any spaces to move
 void playerMove();          // for when its the player turn to move
 void computerMove();        // for when it's the computer turn to move
@@ -19,12 +19,21 @@ void printWinner(char);         // used to print the player who won
 
 
 int main(){
+
+    char winner = ' ';
+
+    resetBoard();
     return 0;
 }
 
 //reset the 2d character array
-void resetBoard(){
+void resetBoard(){                              // nested for loops in order to clear the board's row and column
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            board[i][j] = ' ;'
+        }
 
+    }
 }  
 
 //used to print 2d charatcer array

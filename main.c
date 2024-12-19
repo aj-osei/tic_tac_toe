@@ -3,6 +3,12 @@
 #include <ctype.h>
 #include <time.h>
 
+char board[3][3];           // 2d array of the game board
+const char PLAYER = 'X';    // PLAYER is set to X
+const char COMPUTER = 'O'       // computer is set to O
+
+
+
 void resetBoard();          //reset the 2d character array
 void printBoard();          //used to print 2d charatcer array
 int checkFreeSpaces();      // check if there is any spaces to move

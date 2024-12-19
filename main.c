@@ -23,7 +23,11 @@ int main(){
     char winner = ' ';
 
     resetBoard();
-    printBoard();
+
+    while(winner = ' ' && checkFreeSpaces() != 0){
+        printBoard();
+    }
+    
     return 0;
 }
 
@@ -50,7 +54,19 @@ void printBoard(){
 
 // check if there is any spaces to move
 int checkFreeSpaces(){
+    int freeSpaces = 9;
 
+    for(int i = 0; i < 3; i++){                 //nested for loop to check if there is any free space available!
+        for(int j = 0; j < 3; j++){
+            if(board[i][j] != ' '){
+                freeSpaces --;
+
+            }
+
+        }
+
+    }
+    return freeSpaces;
 }
 
 // for when its the player turn to move

@@ -24,8 +24,11 @@ int main(){
 
     resetBoard();
 
-    while(winner = ' ' && checkFreeSpaces() != 0){
+    while(winner == ' ' && checkFreeSpaces() != 0){
         printBoard();
+
+        playerMove();
+        winner = checkWinner();
     }
     
     return 0;
@@ -70,7 +73,29 @@ int checkFreeSpaces(){
 }
 
 // for when its the player turn to move
-void playerMove(){
+void playerMove(){                                                  // this function uses a do-while loop in order to have user continue action until the board is empty
+    int x;
+    int y;
+
+    do{
+   
+    printf("Enter row #(1 - 3): ");
+    scanf("%d", &x);
+    x--;
+
+    printf("Enter column #(1 - 3): ");
+    scanf("%d", &y);
+    y--;
+
+    if(board[x][y] != ' '){
+        printf("Invalid move!\n")
+
+    } else{
+        board[x][y] =  PLAYER;
+        break;
+    }
+    } while (board[x][y] != ' ');
+
 
 } 
 
